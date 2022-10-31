@@ -45,7 +45,6 @@ Q3：数値型の配列を引数にとり、配列の要素が3の倍数の場�
 function feelingGood(arr) {
   const array = [];
   for (const item of arr) {
-    console.log(item);
     if (item % 3 === 0 && item % 5 === 0) {
       array.push('Feeling Good');
     } else if (item % 3 === 0) {
@@ -130,7 +129,8 @@ Q4：オブジェクトにキーとバリューで指定した要素を追加す
 const obj = { tanaka: 17, yamada: 21, takahashi: 25 };
 
 function addElem(obj, key, value) {
-  // ここに処理を記述
+  obj[key] = value;
+  return obj;
 }
 
 test('Q4', addElem(obj, 'iida', 32), {
