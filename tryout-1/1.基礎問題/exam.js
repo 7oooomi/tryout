@@ -42,6 +42,22 @@ Q3：数値型の配列を引数にとり、配列の要素が3の倍数の場�
 ************************************************************/
 
 // ここに処理を記述
+function feelingGood(arr) {
+  const array = [];
+  for (const item of arr) {
+    console.log(item);
+    if (item % 3 === 0 && item % 5 === 0) {
+      array.push('Feeling Good');
+    } else if (item % 3 === 0) {
+      array.push('feeling');
+    } else if (item % 5 === 0) {
+      array.push('good');
+    } else {
+      array.push(item);
+    }
+  }
+  return array;
+}
 
 const toThree = [1, 2, 3];
 const toThreeResult = [1, 2, 'feeling'];
