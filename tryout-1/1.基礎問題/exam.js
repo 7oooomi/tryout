@@ -24,7 +24,10 @@ Q2：配列の任意のindexの値を削除する関数を作成しましょう
 
 ************************************************************/
 
-function dropArrayValue(arr, index) {}
+function dropArrayValue(arr, index) {
+  arr.splice(index, 1);
+  return arr;
+}
 
 test('Q2', dropArrayValue([1, 2, 3, 4, 5], 2), [1, 2, 4, 5]);
 test('Q2', dropArrayValue([1, 2, 3, 4, 5], 3), [1, 2, 3, 5]);
