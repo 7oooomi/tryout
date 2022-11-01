@@ -42,7 +42,7 @@ Array.filter, Array.map を利用して配列の偶数要素のみを抽出し�
 ************************************************************/
 
 function squareForEvenNumber(arr) {
-  // ここに処理を記述
+  return arr.filter((i) => i % 2 === 0).map((i) => i * i);
 }
 
 test('Q3', squareForEvenNumber([1, 2, 3, 4, 5, 6, 7, 8, 9]), [4, 16, 36, 64]);
