@@ -24,7 +24,8 @@ Q2：入力された文字列を逆順にする関数を作成しましょう
 ************************************************************/
 
 function getReverse(str) {
-  // ここに処理を記述
+  let reverseStr = str.split('').reverse().join('');
+  return reverseStr;
 }
 
 test('Q2', getReverse('ーシクタ'), 'タクシー');
