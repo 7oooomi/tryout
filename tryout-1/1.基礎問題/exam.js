@@ -147,7 +147,12 @@ Q5：オブジェクト内のすべての要素の任意のべき乗を求める
 ************************************************************/
 
 function calcElemPow(obj, pow) {
-  // ここに処理を記述
+  let num;
+  for (const key in obj) {
+    num = obj[key] ** pow;
+    obj[key] = num;
+  }
+  return obj;
 }
 
 test('Q5', calcElemPow({ tanaka: 17, yamada: 21, takahashi: 25 }, 2), {
