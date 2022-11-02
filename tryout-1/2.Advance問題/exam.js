@@ -80,7 +80,27 @@ Q5：
 ************************************************************/
 
 const insertLinkedList = (list, data, addData) => {
-  // ここに処理を記述
+  let List = list.head;
+  let result;
+  const callList = (ls) => {
+    for (const key in ls) {
+      if (key === 'value') {
+        if (ls.value === data) {
+          result = ls.next;
+          ls.next = { value: addData, next: result };
+        }
+      } else {
+        if (ls.next == null) {
+          return;
+        }
+        callList(ls.next);
+      }
+    }
+  };
+
+  callList(List);
+  List = { head: List };
+  return List;
 };
 
 const linkedList = {
