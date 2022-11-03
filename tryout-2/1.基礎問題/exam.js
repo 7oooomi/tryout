@@ -82,7 +82,13 @@ Q4：指定したキーの要素を削除する関数を作成しましょう
 ************************************************************/
 
 function dropElem(obj, key) {
-  // ここに処理を記述
+  let res = {};
+  for (const k in obj) {
+    if (k !== key) {
+      res[k] = obj[k];
+    }
+  }
+  return res;
 }
 
 test('Q4', dropElem({ tanaka: 17, yamada: 21, takahashi: 25 }, 'tanaka'), {
