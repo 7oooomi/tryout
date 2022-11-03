@@ -53,7 +53,11 @@ const espanolNumber = [
 ];
 
 function getBetweenNumber(start, end) {
-  // ここに処理を記述
+  let res = [];
+  for (let i = start; i < end; i++) {
+    res.push(espanolNumber[i]);
+  }
+  return res;
 }
 
 test('Q3', getBetweenNumber(2, 5), ['dos', 'tres', 'cuatro']);
