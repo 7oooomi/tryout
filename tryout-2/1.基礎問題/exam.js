@@ -1,4 +1,3 @@
-
 /************************************************************
 
 Q1：配列の先頭に値を追加する関数を作成しましょう。
@@ -6,16 +5,18 @@ Q1：配列の先頭に値を追加する関数を作成しましょう。
 ************************************************************/
 
 function addValueToTopOfArray(arr, value) {
-    // ここに処理を記述
+  arr.unshift(value);
+  return arr;
 }
 
 test('Q1', addValueToTopOfArray([1, 2, 3, 4, 5], 0), [0, 1, 2, 3, 4, 5]);
 test('Q1', addValueToTopOfArray([1, 2, 3, 4, 5], 10), [10, 1, 2, 3, 4, 5]);
-test('Q1', addValueToTopOfArray(["one", "two", "three"], "head"), ["head", "one", "two", "three"]);
-
-
-
-
+test('Q1', addValueToTopOfArray(['one', 'two', 'three'], 'head'), [
+  'head',
+  'one',
+  'two',
+  'three',
+]);
 
 /************************************************************
 
@@ -24,15 +25,12 @@ Q2：配列内の全要素の任意のべき乗の配列を取得する関数を
 ************************************************************/
 
 function calcArrayPow(arr, pow) {
-    // ここに処理を記述
+  // ここに処理を記述
 }
 
 test('Q2', calcArrayPow([1, 2, 3, 4, 5], 2), [1, 4, 9, 16, 25]);
 test('Q2', calcArrayPow([1, 2, 3, 4, 5], 3), [1, 8, 27, 64, 125]);
 test('Q2', calcArrayPow([11, 22, 0, 33], 0), [1, 1, 1, 1]);
-
-
-
 
 /************************************************************
 
@@ -42,20 +40,36 @@ start と end は index 番号を示し、返り値の配列に end 番目を含
 
 ************************************************************/
 
-const espanolNumber = ["cero", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siste", "ocho"];
+const espanolNumber = [
+  'cero',
+  'uno',
+  'dos',
+  'tres',
+  'cuatro',
+  'cinco',
+  'seis',
+  'siste',
+  'ocho',
+];
 
 function getBetweenNumber(start, end) {
-    // ここに処理を記述
+  // ここに処理を記述
 }
 
-test('Q3', getBetweenNumber(2, 5), ["dos", "tres", "cuatro"]);
-test('Q3', getBetweenNumber(4, 6), ["cuatro", "cinco"]);
+test('Q3', getBetweenNumber(2, 5), ['dos', 'tres', 'cuatro']);
+test('Q3', getBetweenNumber(4, 6), ['cuatro', 'cinco']);
 test('Q3', getBetweenNumber(0, 0), []);
-test('Q3', getBetweenNumber(0, espanolNumber.length), ['cero', 'uno', 'dos', 'tres', 'cuatro', 'cinco', 'seis', 'siste', 'ocho'])
-
-
-
-
+test('Q3', getBetweenNumber(0, espanolNumber.length), [
+  'cero',
+  'uno',
+  'dos',
+  'tres',
+  'cuatro',
+  'cinco',
+  'seis',
+  'siste',
+  'ocho',
+]);
 
 /************************************************************
 
@@ -64,14 +78,23 @@ Q4：指定したキーの要素を削除する関数を作成しましょう
 ************************************************************/
 
 function dropElem(obj, key) {
-    // ここに処理を記述
+  // ここに処理を記述
 }
 
-test('Q4', dropElem({ "tanaka": 17, "yamada": 21, "takahashi": 25 }, "tanaka"), { "yamada": 21, "takahashi": 25 });
-test('Q4', dropElem({ "red": "apple", "yellow": "banana", "orange": "orange" }, "yellow"), { "red": "apple", "orange": "orange" });
-test('Q4', dropElem({ 1993: "yamada", 2002: "takahashi", 2019: "tanaka" }, 2002), { 1993: "yamada", 2019: "tanaka" });
-
-
+test('Q4', dropElem({ tanaka: 17, yamada: 21, takahashi: 25 }, 'tanaka'), {
+  yamada: 21,
+  takahashi: 25,
+});
+test(
+  'Q4',
+  dropElem({ red: 'apple', yellow: 'banana', orange: 'orange' }, 'yellow'),
+  { red: 'apple', orange: 'orange' }
+);
+test(
+  'Q4',
+  dropElem({ 1993: 'yamada', 2002: 'takahashi', 2019: 'tanaka' }, 2002),
+  { 1993: 'yamada', 2019: 'tanaka' }
+);
 
 /************************************************************
 
@@ -89,53 +112,42 @@ Q5：
 
 // ここにコードを書きましょう
 
-
 const member = {
-    orange: {
-        name: "Arisa",
-        age: 20,
-    },
-    blue: {
-        name: "Marina",
-        age: 25,
-    },
-    purple: {
-        name: "Moe",
-        age: 26,
-    },
+  orange: {
+    name: 'Arisa',
+    age: 20,
+  },
+  blue: {
+    name: 'Marina',
+    age: 25,
+  },
+  purple: {
+    name: 'Moe',
+    age: 26,
+  },
 };
 
-const expect = [
-    { color: ["blue", "purple"] },
-    { name: ["Marina", "Moe"] }
-];
+const expect = [{ color: ['blue', 'purple'] }, { name: ['Marina', 'Moe'] }];
 
 const member2 = {
-    red: {
-        name: "Riko",
-        age: 25,
-    },
-    yellow: {
-        name: "Miyu",
-        age: 22,
-    },
-    purple: {
-        name: "Airi",
-        age: 18,
-    },
+  red: {
+    name: 'Riko',
+    age: 25,
+  },
+  yellow: {
+    name: 'Miyu',
+    age: 22,
+  },
+  purple: {
+    name: 'Airi',
+    age: 18,
+  },
 };
 
-const expect2 = [
-    { color: ["red"] },
-    { name: ["Riko"] }
-];
+const expect2 = [{ color: ['red'] }, { name: ['Riko'] }];
 
 test('Q5', over25(member), expect);
 test('Q5', over25(member2), expect2);
-
-
-
-
 
 /************************************************************
 
