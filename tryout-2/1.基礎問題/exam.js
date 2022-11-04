@@ -102,7 +102,7 @@ test(
 );
 test(
   'Q4',
-  dropElem({ 1993: 'yamada', 2002: 'takahashi', 2019: 'tanaka' }, 2002),
+  dropElem({ 1993: 'yamada', 2002: 'takahashi', 2019: 'tanaka' }, '2002'),
   { 1993: 'yamada', 2019: 'tanaka' }
 );
 
@@ -120,7 +120,19 @@ Q5：
 
 ************************************************************/
 
-// ここにコードを書きましょう
+function over25(obj) {
+  const res = [];
+  let colorObj = { color: [] };
+  let nameObj = { name: [] };
+  for (const key in obj) {
+    if (obj[key].age > 24) {
+      colorObj.color.push(key);
+      nameObj.name.push(obj[key].name);
+    }
+  }
+  res.push(colorObj, nameObj);
+  return res;
+}
 
 const member = {
   orange: {
