@@ -177,7 +177,13 @@ Q6：任意の個数の数値型の引数をとり、その数の合計を数値
 
 ************************************************************/
 
-// ここにコードを書きましょう
+function getSum(...theAges) {
+  let num = 0;
+  for (const age of theAges) {
+    num += age;
+  }
+  return num;
+}
 
 test('Q6', getSum(1), 1);
 test('Q6', getSum(1, 3), 4);
