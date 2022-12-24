@@ -58,7 +58,7 @@ const str = '今日の晩御飯はカレーだ。';
 const str2 = '明日の朝は早い';
 
 function getNgram(str, ngram) {
-  // ここに処理を記述
+  const res = [];
 }
 
 test('Q2', getNgram(str, 1), [
