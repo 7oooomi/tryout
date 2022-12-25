@@ -58,7 +58,24 @@ const str = '今日の晩御飯はカレーだ。';
 const str2 = '明日の朝は早い';
 
 function getNgram(str, ngram) {
+  console.log(str);
   const res = [];
+  const ngramarray = [];
+  let count = ngram;
+  if (ngram == 1) {
+    return str.split('');
+  } else {
+    for (let i = 0; i < str.length; i++) {
+      res.push(str.substring(i, count));
+      count += 1;
+    }
+    for (let i = 0; i < res.length; i++) {
+      if (res[i].length == ngram) {
+        ngramarray.push(res[i]);
+      }
+    }
+    return ngramarray;
+  }
 }
 
 test('Q2', getNgram(str, 1), [
