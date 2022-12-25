@@ -58,7 +58,6 @@ const str = '今日の晩御飯はカレーだ。';
 const str2 = '明日の朝は早い';
 
 function getNgram(str, ngram) {
-  console.log(str);
   const res = [];
   const ngramarray = [];
   let count = ngram;
@@ -125,7 +124,14 @@ const obj = { Tanaka: 60, Yamada: 72, Takahashi: 49, Hisoka: 95 };
 const obj2 = { Minato: 55, Sawada: 88 };
 
 function objectMap(obj, someFunc) {
-  // ここに処理を記述
+  const res = {};
+  for (const key in obj) {
+    let ob = someFunc(key, obj[key]);
+    for (const k in ob) {
+      res[k] = ob[k];
+    }
+  }
+  return res;
 }
 
 function addFive(key, value) {
