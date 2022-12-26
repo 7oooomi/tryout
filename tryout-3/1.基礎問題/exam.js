@@ -52,7 +52,12 @@ Q3：
 ************************************************************/
 
 function getLyrics(start, end) {
-  // ここに処理を記述
+  let string = myFavoriteThings.split(' ');
+  const array = [];
+  for (let i = start; i < end; i++) {
+    array.push(string[i]);
+  }
+  return array;
 }
 
 let myFavoriteThings =
