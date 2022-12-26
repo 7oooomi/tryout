@@ -169,13 +169,7 @@ Q4：
 
 ************************************************************/
 
-function bubbleSort(array) {
-  const comparefunc = (a, b) => {
-    return b - a;
-  };
-  array.sort(comparefunc);
-  return array[3];
-}
+function bubbleSort(array) {}
 
 test('Q4', bubbleSort([6, 9, 2, 1, 0, 3, 7]), 3);
 test('Q4', bubbleSort([7, 10, 3, 1, -6]), 1);
@@ -189,7 +183,7 @@ Q5：
 
 ************************************************************/
 
-// ここに処理を記述
+function quickSort(array) {}
 
 test('Q5', quickSort([6, 9, 2, 1, 0, 3, 7]), 3);
 test('Q5', quickSort([7, 10, 3, 1, -6]), 1);
