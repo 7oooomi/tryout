@@ -196,7 +196,18 @@ const fruitBasket = {
 };
 
 function getStock(fruits) {
-  //  ここに処理を記述
+  for (const k in fruitBasket) {
+    if (fruits == k) {
+      let stock = Object.values(fruitBasket[fruits].stock);
+      for (const num of stock) {
+        if (num == 0) {
+          return '今はストックが十分ではありません';
+        }
+      }
+      return fruitBasket[fruits].stock;
+    }
+  }
+  return '今はありません';
 }
 
 // ここ以下は変更を加えないでください
