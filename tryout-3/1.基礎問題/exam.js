@@ -29,7 +29,13 @@ Q2：配列の任意のindexの値を削除する関数を作成しましょう
 const arr2 = [1, 2, 3, 4, 5];
 
 function dropArrayValue(arr, index) {
-  // ここに処理を記述
+  const delarray = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (i !== index) {
+      delarray.push(arr[i]);
+    }
+  }
+  return delarray;
 }
 
 test('Q2', dropArrayValue(arr2, 2), [1, 2, 4, 5]);
