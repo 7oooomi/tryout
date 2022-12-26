@@ -87,7 +87,16 @@ Q4：指定したキーの値を更新する関数を作成しましょう。
 const obj = { tanaka: 17, yamada: 21, takahashi: 25 };
 
 function updateElem(obj, key, value) {
-  // ここに処理を記述
+  const ob = {};
+  for (const k in obj) {
+    if (key == k) {
+      ob[key] = value;
+    } else {
+      ob[key] = value;
+    }
+    ob[k] = obj[k];
+  }
+  return ob;
 }
 
 test('Q4', updateElem(obj, 'tanaka', 19), {
