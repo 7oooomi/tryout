@@ -7,13 +7,15 @@ Q1：配列の任意のindexの値を更新する関数を作成しましょう
 const arr = [1, 2, 3, 4, 5];
 
 function updateArrayValue(arr, value, index) {
-  const updateArray = [];
+  const upDateArr = [];
   for (let i = 0; i < arr.length; i++) {
-    if (i == index) {
-      updateArray.push(value);
-    } else updateArray.push(arr[i]);
+    if (i === index) {
+      upDateArr.push(value);
+    } else {
+      upDateArr.push(arr[i]);
+    }
   }
-  return updateArray;
+  return upDateArr;
 }
 
 test('Q1', updateArrayValue(arr, 8, 2), [1, 2, 8, 4, 5]);
