@@ -72,7 +72,10 @@ const obj1 = { tanaka: 17, yamada: 21, takahashi: 25 };
 const obj2 = { saitou: 38, shimoda: 25 };
 
 function mergeElem(obj1, obj2) {
-  // ここに処理を記述
+  for (const key in obj2) {
+    obj1[key] = obj2[key];
+  }
+  return obj1;
 }
 
 test('Q3', mergeElem(obj1, obj2), {
