@@ -177,6 +177,19 @@ test('Q4', getStock('grape'), { purple: 3, green: 2 });
 ************************************************************/
 
 // ここにコードを書きましょう
+function over25(mem) {
+  const arr = [];
+  let colorObj = { color: [] };
+  let nameObj = { name: [] };
+  for (const key in mem) {
+    if (25 <= mem[key].age) {
+      colorObj['color'].push(key);
+      nameObj['name'].push(mem[key].name);
+    }
+  }
+  arr.push(colorObj, nameObj);
+  return arr;
+}
 
 const member = {
   orange: {
