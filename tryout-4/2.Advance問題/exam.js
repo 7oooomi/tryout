@@ -38,7 +38,18 @@ Q2：引数に文字列を1つ取り、引数の文字列の大文字は小文�
 
 const str = 'I am instRucTor at Ms.enginEer';
 
-// ここにコードを記述
+function getString(str) {
+  let strArr = str.split('');
+  const res = [];
+  for (const i of strArr) {
+    if (i === i.toUpperCase()) {
+      res.push(i.toLowerCase());
+    } else {
+      res.push(i.toUpperCase());
+    }
+  }
+  return res.join('');
+}
 
 test('Q2', getString(str), 'i AM INSTrUCtOR AT mS.ENGINeER');
 test('Q2', getString('lIGHT'), 'Light');
