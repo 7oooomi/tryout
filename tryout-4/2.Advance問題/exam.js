@@ -66,16 +66,22 @@ Q3：
 
 const password = 'aaad32!dda';
 
-function passwordCheck() {
-  // ここに処理を記述。適宜引数も設定してください。
+function passwordCheck(string, ...func) {
+  let res = true;
+  for (const fc of func) {
+    if (fc(string) == false) {
+      res = false;
+    }
+  }
+  return res;
 }
 
 function isTooShort(password) {
   if (password.length < 7) {
     console.log('password is too short!');
-    return true;
+    return false;
   }
-  return false;
+  return true;
 }
 
 function containsInvalidCharacters(password) {
@@ -83,10 +89,10 @@ function containsInvalidCharacters(password) {
   for (let character of invalid_characters) {
     if (password.indexOf(character) !== -1) {
       console.log('Cannot use "' + character + '" in password');
-      return true;
+      return false;
     }
   }
-  return false;
+  return true;
 }
 
 test('Q3', passwordCheck(password, isTooShort), true);
