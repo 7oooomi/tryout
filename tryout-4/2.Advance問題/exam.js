@@ -111,7 +111,20 @@ Q4：
 ************************************************************/
 
 const removeLinkedList = (list, data) => {
-  // ここに処理を記述
+  let next = list.head;
+
+  const rec = (obj) => {
+    if (obj.value == data) {
+      obj.value = obj.next.value;
+      obj.next = obj.next.next;
+      next = { head: next };
+    } else {
+      rec(obj.next);
+    }
+  };
+  rec(next);
+
+  return next;
 };
 
 const linkedList2 = {
