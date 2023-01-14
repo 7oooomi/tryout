@@ -197,7 +197,26 @@ Q5：
 ************************************************************/
 
 const searchTree = (list, data) => {
-  // ここに処理を記述
+  let result = false;
+
+  const call = (obj) => {
+    for (const key in obj) {
+      if (key === 'value') {
+        if (obj[key] === data) {
+          result = true;
+        }
+      }
+      if (key === 'left') {
+        call(obj[key]);
+      }
+      if (key === 'right') {
+        call(obj[key]);
+      }
+    }
+  };
+
+  call(list);
+  return result;
 };
 
 const tree = {
